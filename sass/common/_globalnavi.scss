@@ -1,0 +1,286 @@
+.globalNavi {
+	display:none;
+	@include media(m){
+		display:block;
+	}
+}
+
+// .globalNaviSmall　グローバルナビ ハンバーガーメニュー
+.globalNaviSmall {
+	&__icon {
+		width: 3em;
+		height: 3em;
+		position: absolute;
+		top:0;
+		right:0;
+	}
+	&__iconButton{
+		width: 3em;
+		height: 3em;
+		cursor:pointer;
+		float: right;
+		display: block;
+		background: rgba(1,35,110,0.45);
+		position: relative;
+		margin:0.5em 0.5em 0.5em 0.5em;
+	  	border-radius: 0.3em 0.3em 0.3em 0.3em;
+	}
+	&__icon span {
+	    width: 2em;
+	    height: 1px;
+	    display: block;
+	    background: #FFF;
+	    position: absolute;
+	    left: 50%;
+	    top: 50%;
+	    margin-left: -33%; 
+	}
+}
+	
+
+.globalNaviSmall{
+	&__icon--type01{
+		// ハンバーガーメニュー 押す前
+		span {
+		  -webkit-transition: all 0.3s;
+		          transition: all 0.3s;
+		  -webkit-transform: rotate(0deg);
+		      -ms-transform: rotate(0deg);
+		          transform: rotate(0deg); 
+		}
+		.iconButton--top {
+		  -webkit-transform: translateY(-0.7em);
+		      -ms-transform: translateY(-0.7em);
+		          transform: translateY(-0.7em); 
+		}
+		.iconButton--bottom {
+		  -webkit-transform: translateY(0.7em);
+		      -ms-transform: translateY(0.7em);
+		          transform: translateY(0.7em); 
+    	}
+
+    	// ハンバーガーメニュー hover
+		&:hover {
+			.iconButton--top {
+			  -webkit-transform: translateY(-0.8em);
+			      -ms-transform: translateY(-0.8em);
+			          transform: translateY(-0.8em);
+			}
+			.iconButton--bottom {
+			  -webkit-transform: translateY(0.8em);
+			      -ms-transform: translateY(0.8em);
+			          transform: translateY(0.8em); 
+          	}
+    	}
+
+    	// ハンバーガーメニュー 押した後の動き
+		&.is-open {
+			.iconButton--middle {
+			  background: rgba(255, 255, 255, 0);
+			}
+			.iconButton--top {
+			  -webkit-transform: rotate(-45deg) translateY(0px);
+			      -ms-transform: rotate(-45deg) translateY(0px);
+			          transform: rotate(-45deg) translateY(0px); 
+			}
+			.iconButton--bottom {
+				  -webkit-transform: rotate(45deg) translateY(0px);
+				      -ms-transform: rotate(45deg) translateY(0px);
+				          transform: rotate(45deg) translateY(0px);
+			}
+    	}
+	}
+}
+
+
+
+/* .globalNaviSmall　スマホグローバルナビ
+------------------------------------------ */
+.globalNaviSmall {
+	display:block;
+	width:100%;
+	position: fixed;
+	z-index:2;
+	top:0;
+	left:0;
+	@include media(m){
+		display: none;
+	}
+	&__menu{
+		padding:1em;
+		display:none;
+		background:rgba(224,224,224,0.95);
+		&__main{
+			width:100%;
+			height:100vh;
+			overflow:auto;
+			li {
+				border-top:#FFF dotted 1px;
+				display:block;
+				a{
+					padding:0.8rem 0;
+					display:block;
+					&:hover{
+						color:#999;
+					}
+					&:after{
+						content:"\03e";
+						float:right;
+						padding-right:1em;
+					}
+				}
+			}
+			>li:last-child {
+				margin-bottom:5em;
+			}
+		}
+		&__sub li{
+  			padding:0 0 0 1em;
+		}
+	}
+}
+
+
+//以下768px以上で適用される　レイアウトの指定-----------------------------------------------
+@include media(m){
+
+.globalNavi{
+	&__menu{
+		&__main{
+			>li {
+				width: 168px;
+				width: 16.6%;
+				height: 5em;
+				padding:1em 0 0 0;
+				text-align:center;
+				display:block;
+				float: left;
+			   	position: relative; /*z-indexの指定や子要素の基準とするために指定*/
+			   	z-index: 2; /*ドロップダウンしたメニューが隠れないように*/
+				&.pR{
+					float: right;
+				}
+				>a:before{
+					content:" ";
+					width:1px;
+					height:2em;
+					background:#CCC;
+					display:block;
+					position:absolute;
+					top:50%;
+					margin-top:-1em;
+					left:0;
+				}
+				>&:last-child a:after{
+					content:" ";
+					width:1px;
+					height:2em;
+					background:#CCC;
+					display:block;
+					position:absolute;
+					top:50%;
+					margin-top:-1em;
+					right:0;
+				}
+				a small{
+					text-align:center;
+					font-size:0.65em;
+					display:block;
+				}
+			}
+			li a {
+				text-decoration:none;
+				display:block;
+				&:hover { 
+					text-decoration:none;
+				}
+			}
+			&__btn--type01{
+				width:90%;
+				background: rgba(0,0,0,0.45);
+				padding:0.5em;
+				margin:0 auto;
+				position:absolute;
+				top:15%;
+				font-size:0.9em;
+				left:5%;
+				display:block;
+				color:#FFF;
+				-webkit-transition: all .2s ease;
+			    transition: all .2s ease;
+			    a:hover &{
+			    	background:#AAA;
+			    }
+			}
+		}
+	}
+}
+
+/* When Active Page */
+body#home .globalNavi ul.globalNavi__menu__main>li:nth-child(1)>a {color:#EEE !important;}
+body#page .globalNavi ul.globalNavi__menu__main>li:nth-child(2)>a {color:#EEE !important;}
+body#■■ .globalNavi ul.globalNavi__menu__main>li:nth-child(3)>a {color:#EEE !important;}
+body#■■ .globalNavi ul.globalNavi__menu__main>li:nth-child(4)>a {color:#EEE !important;}
+body#■■ .globalNavi ul.globalNavi__menu__main>li:nth-child(5)>a {color:#EEE !important;}
+body#■■ .globalNavi ul.globalNavi__menu__main>li:nth-child(6)>a {color:#EEE !important;}
+
+
+// globalNavi__menu__sub
+.globalNavi {
+	ul{
+		li{
+			ul.globalNavi__menu__sub {
+				width:100%;
+			  	opacity: 0;  /*サブメニューは最初は非表示にしておく*/
+			  	visibility: hidden;  /*サブメニューは最初は非表示にしておく*/
+			  	position: absolute;  /*絶対配置にしておかないとうまくいかない*/
+			  	top: 3.7em;
+			  	left: 0;
+			  	border-top: 1px solid #EEE;  /*ボーダートップを指定*/
+			    -webkit-transition: all .2s ease;
+			    transition: all .2s ease;
+			    li{
+					height:auto;
+				  	float: none;  /*サブメニューはフロートさせないので解除*/
+				  	padding: 0;  /*親メニューのパディングを解除*/
+					margin:0;
+					*margin-top:-8px;
+					display:block;
+					line-height:1.5em;
+					a{
+					  	border: 1px solid #eee;  /*ボーダーの指定*/
+					  	border-top: none;  /*ボーダートップは重なって太くなるので解除。一番上は ul 要素に指定*/
+					  	padding: 0.8rem 0;
+					  	background-color: #FFF;
+						text-decoration:none;
+					  	color: #666;
+						text-align:center;
+						display:block;
+						font-size:0.9em;
+						&:hover{ 
+							color:#000;
+						  	background-color: #EEE;
+						}
+					}
+				}
+			}
+			&:hover ul.globalNavi__menu__sub {
+				width:100%;
+			  	top: 3.9em;
+			    visibility:visible;
+			    opacity: 1;
+			  	display: block;    /*マウスオーバー時にサブメニューを表示する*/
+			}
+		}
+	}
+}
+	
+.globalNavi.globalNaviAccordion ul.globalNavi__menu__sub li{
+  	padding:0;
+}
+
+
+
+
+} 
+// 768px以上で適用される　レイアウトの指定　ここまで

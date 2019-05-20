@@ -1,0 +1,13 @@
+body#home.home{
+	.mainVisual {
+		display:block;
+		background: url(../img/sample/bgMainVisual.jpg) repeat-x center top;
+		margin:0 0 40px;
+	}
+	.mainVisual h3{
+		display:block;
+		height:400px;
+		background: url(../img/sample/mainVisual.png) no-repeat center top;
+		text-indent:-999em;
+	}
+}

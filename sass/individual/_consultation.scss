@@ -1,0 +1,156 @@
+.consultationFlowBox{
+	margin:$spaceSize*2 0 $spaceSize;
+	@include media(m){
+		margin:$spaceSize*4 0 $spaceSize;
+	}
+	&>div:last-child() .consultationFlow__image::before{
+		@include media(m){
+			content: none;
+		}
+	}
+	&>div:last-child() .consultationFlow__sent{
+		margin:0;
+		&::before{
+			content: none;
+		}
+	}
+}
+
+.consultationFlow{
+	&__image{
+		display:block;
+		position:relative;
+		margin-bottom:$spaceSize;
+		&::before{
+			@include media(m){
+				color:#000;
+				content: "\f054";
+				font-family: 'icomoon';
+	    		transition: all 0.5s;
+				position: absolute;
+				font-size:3em;
+				top: 50%;
+				right: -0.6em;
+				margin-top:-0.5em;
+			}
+		}
+	}
+	&__number{
+		display:block;
+		width:1.7em;
+		font-size:1.7em;
+		background:rgba($colorType04,.7);
+		padding:0.1em;
+		color:#FFF;
+		position:absolute;
+		bottom:0;
+		left:0;
+		text-align:center;
+		@include media(m){
+			width:1.9em;
+			font-size:1.4em;
+		}
+	}
+	&__title{
+		display:block;
+		font-size:2em;
+		color:$colorType02;
+		padding:0.1em;
+		position:absolute;
+		line-height:1.1em;
+		top:-0.7em;
+		right:0;
+		font-weight:bold;
+	}
+	&__sent{
+		margin:0 0 $spaceSize*3;
+		font-size:0.9em;
+		@include media(m){
+			margin:0;
+		}
+		&::before{
+			color:#000;
+			content: "\f078";
+			font-family: 'icomoon';
+	    	transition: all 0.5s;
+			position: absolute;
+			font-size:3em;
+			bottom: 0;
+			left: 50%;
+			margin-left:-0.5em;
+			@include media(m){
+				content: none;
+			}
+		}
+	}
+}
+
+.consultationMeritSection{
+	background:#FFF;
+	display:block;
+}
+
+.consultationMeritBox{
+	position:relative;
+	background:#faf7c4;
+	padding:$spaceSize 0 $spaceSize*2;
+	@include media(m){
+		display: flex;
+		align-items: center;
+		padding:0;
+	}
+	&.--typeReverse{
+		background:none;
+		@include media(m){
+			flex-direction: row-reverse;
+		}
+	}
+}
+
+.consultationMerit{
+	&__image{
+		width:90%;
+		margin-left:auto;
+		margin-right:auto;
+		@include media(m){
+			width:50%;
+		}
+	}
+	&__content{
+		text-align:center;
+		width:90%;
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:-1em;
+		@include media(m){
+			width:50%;
+			padding:0 2em;
+			margin-top:0;
+		}
+	}
+	&__contentNumber{
+		background:$colorType04;
+		color:#FFF;
+		padding:3px 1em;
+		font-size:0.8em;
+		margin:0 0 $spaceSize/2;
+		display:inline-block;
+		border-radius:0.3em;
+	}
+	&__contentTitle{
+		font-size:1.3em;
+		font-weight:bold;
+		margin:0 0 $spaceSize;
+		@include media(m){
+			font-size:1.5em;
+		}
+	}
+}
+
+.consultationPrivilegeSection{
+	.sectionLead--type02{
+		@include media(m){
+			margin-top:1.5em;
+		}
+	}
+}

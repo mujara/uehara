@@ -1,0 +1,78 @@
+.cuisine .pageContentsTopBox{
+	&__leftBox{
+		@include media(m){
+			width:45%;
+		}
+	}
+	&__rightBox{
+		@include media(m){
+			width:50%;
+			margin-right:0;
+		}
+		@include media(xl){
+			width:50%;
+		}
+	}
+}
+
+.cuisineOrderBox{
+	dl{
+		background:#e2f5da;
+		padding:$spaceSize;
+		@include media(m){
+			display: flex;
+			justify-content: center;
+		}
+		@include media(xl){
+			padding:$spaceSize*2;
+		}
+		dt{
+			background:#FFF;
+			padding:$spaceSize/2;
+			text-align:center;
+			@include media(m){
+				text-align:left;
+				align-self:center;
+				font-size:0.8em;
+			}
+			@include media(xl){
+				font-size:1em;
+				padding:$spaceSize;
+			}
+		}
+		dd{
+			padding:$spaceSize;
+			text-align:center;
+			@include media(m){
+				text-align:left;
+			}
+			@include media(xl){
+				padding:$spaceSize;
+			}
+		}
+	}
+	&__tel{
+			font-size:1.8em;
+			color:$colorType02;
+	}
+}
+
+.cuisineItemSection{
+	&__lead{
+		background:url(../img/cuisine/bgExample.jpg) no-repeat center top;
+		background-size:cover;
+		text-align:center;
+		padding:$spaceSize*3 $spaceSize;
+		font-size:1.4em;
+		color:#FFF;
+		font-weight:bold;
+		@include media(m){
+			font-size:1.8em;
+			padding:$spaceSize*8 $spaceSize;
+		}
+	}
+	@include media(m){
+	}
+	@include media(xl){
+	}
+}

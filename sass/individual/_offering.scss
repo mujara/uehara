@@ -1,0 +1,210 @@
+.Section{
+	@include media(m){
+	}
+	@include media(xl){
+	}
+}
+
+.offering .pageContentsTopBox{
+	&__leftBox{
+		@include media(m){
+			width:45%;
+		}
+	}
+	&__rightBox{
+		@include media(m){
+			width:50%;
+			margin-right:0;
+		}
+		@include media(xl){
+			width:50%;
+		}
+	}
+}
+
+.offeringOrderBox{
+	dl{
+		background:#e2f5da;
+		padding:$spaceSize;
+		@include media(m){
+			display: flex;
+			justify-content: center;
+		}
+		@include media(xl){
+			padding:$spaceSize*2;
+		}
+		dt{
+			background:#FFF;
+			padding:$spaceSize/2;
+			text-align:center;
+			@include media(m){
+				text-align:left;
+				align-self:center;
+				font-size:0.8em;
+			}
+			@include media(xl){
+				font-size:1em;
+				padding:$spaceSize;
+			}
+		}
+		dd{
+			padding:$spaceSize;
+			text-align:center;
+			@include media(m){
+				text-align:left;
+			}
+			@include media(xl){
+				padding:$spaceSize;
+			}
+		}
+	}
+	&__tel{
+			font-size:1.8em;
+			color:$colorType02;
+	}
+}
+
+.offeringOrderFaxBox{
+	clear:both;
+	display:block;
+	margin:0 0 $spaceSize;
+	background:#e2f5da;
+	padding:$spaceSize;
+	@include media(xl){
+		padding:$spaceSize*2;
+	}
+	&__innerTop{
+		display:block;
+		margin:0 0 $spaceSize;
+		dl{
+			display:block;
+			@include media(m){
+				display: flex;
+				justify-content: center;
+			}
+		}
+		dt{
+			background:#FFF;
+			padding:$spaceSize/2;
+			text-align:center;
+			@include media(m){
+				text-align:left;
+				align-self:center;
+				font-size:0.8em;
+			}
+			@include media(xl){
+				font-size:1em;
+				padding:$spaceSize;
+			}
+		}
+		dd{
+			padding:$spaceSize;
+			text-align:center;
+			border-bottom:#c2e3b4 solid 1px;
+			@include media(m){
+				text-align:left;
+				display: flex;
+				justify-content: center;
+			}
+			@include media(xl){
+				padding:$spaceSize;
+			}
+		}
+	}
+	&__faxBox{
+		padding:0 $spaceSize;
+	}
+	&__orderExample{
+		@include media(m){
+			text-align:right;
+			display: flex;
+			justify-content: center;
+			padding:1em 0 0 $spaceSize*2;
+		}
+		p{
+			padding:0 $spaceSize 0 0;
+			margin:0 0 $spaceSize/2;
+		}
+	}
+	&__fax{
+		font-size:1.8em;
+		color:$colorType02;
+	}
+	&__orderExampleBtn{
+		a{
+			color: #000;
+			background: $color-link;
+			display: inline-block;
+			position: relative;
+			padding: 0.6em 3em 0.6em 1.5em;
+			position: relative;
+			&::after{
+			    content: "\f002";
+				font-family: 'icomoon';
+			    position: absolute;
+			    top: 50%;
+			    right: 1.4em;
+			    margin-top: -0.8em;
+			    transition: all 0.5s;
+			}
+			&:hover{
+				color: #000;
+				background: #FFF;
+			}
+			&:hover::after{
+				transform: scale(1.2);
+			}
+		}
+	}
+	&__downloadBox{
+		display: block;
+		border-top:$colorType02 solid 1px;
+		border-left:$colorType02 solid 1px;
+		@extend .clearfix;
+	}
+	&__orderBox{
+		border-right:$colorType02 solid 1px;
+		border-bottom:$colorType02 solid 1px;
+		padding:$spaceSize;
+		display: block;
+		@include media(m){
+			float:left;
+			width:33.333%;
+		}
+		@include media(xl){
+			padding:$spaceSize*2;
+		}
+		p{
+			text-align:center;
+			margin:0 0 $spaceSize/2;
+		}
+	}
+	&__orderBtn{
+		a{
+			color: #FFF;
+			background: $colorType03;
+			border-bottom: #000 solid 4px ;
+			display: block;
+			position: relative;
+			padding: 0.8em 1.2em;
+			transition: .4s;
+			border-radius: 3px;
+			min-width:14em;
+			i{
+				font-size: 2.5em;
+			    padding: 0.2em 0.2em 0 0;
+			    float: left;
+			}
+			&:hover{
+				color:#FFF;
+				background: rgba($colorType03,.9);
+				transform: translateY(1px);
+				border-bottom: #000 solid 3px ;
+			}
+			&:hover:active{
+				transform: translateY(4px);
+				border-bottom: none;
+			}
+		}
+	}
+}

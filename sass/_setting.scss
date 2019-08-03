@@ -5,13 +5,14 @@
 // ==================================
 
 // 色関係の設定 -----------------------
-	$colorType01: #FFF;	//ベースカラー
-	$colorType02: #000;	//メインカラー
-	$colorType03: #000;	//アクセントカラー
-	$colorType04: #000;	//アクセントカラー2
-	$colorType05: #bc0a0a;	//強調
+	$colorType01: #f1fce4;	//ベースカラー　　　　　薄い緑
+	$colorType02: #009261;	//メインカラー　　　　　濃い緑
+	$colorType03: #262e66;	//アクセントカラー2　　　濃い青
+	$colorType04: #854834;	//アクセントカラー2　　　濃い茶　　　
+	$colorType05: #ae0079;	//強調 赤　　
+	$colorType05: #9bba63;	//緑
 
-	$color-link: #808080;	//リンクカラー
+	$color-link: #ede78d;	//リンクカラー　　　　　黄土色
 	$color-link-l: #ccc;	//リンクカラー薄い
 	$color-link-d: #000;	//リンクカラー濃い
 
@@ -41,8 +42,11 @@
 		modal: 100,
 		header: 20,
 		tooltip: 10,
-		default: 1,
+		default: 1
 	);
+	@mixin z-index($key){
+		z-index:map-get($layer,$key);
+	}
 
 // ページ個別設定 -----------------------
-	$pageNameList: company, contact;
+	$pageNameList: company, consultation, contact, cost, cuisine, flow, funeral, hall, offering, question ;

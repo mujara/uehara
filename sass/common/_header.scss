@@ -1,120 +1,218 @@
-#header {
+﻿#header {
 	position: relative;
     transition: .3s;
+    border-top:$colorType02 solid 3px;
 }
 
-.header {
-    &__headTop {
+.header__siteTitleBox {
+	display:block;
+	@include media(m){
 		display:block;
-		border-bottom:#999999 solid 1px;
 	}
-    &__headTop ul li{
-		font-size:0.6em;
-		display:block;
-		text-align:center;
-		padding:5px 0 0;
-		@include media(m){
-			font-size:0.7em;
-			width:60%;
-			float:left;
-			padding:5px 0;
-			text-align:left;
-		}
+}
 
-		&.header__address{
-			padding:0 0 5px;
-			@include media(m){
-				width:35%;
-				float:right;
-				padding:5px 0;
-				text-align:right;
-			}
-		}
+#pageTopFix.is-scroll .header__siteTitleBox{
+	@include media(m){
+		width:20%;
+		float:left;
+		margin:0 3em 0 0;
 	}
-    &__siteTitleBox {
+}
+
+.header__siteTitle{
+	width:60%;
+	float:left;
+	padding:1.5em 1em 1.5em 1em;
+	display:block;
+	img{
+		width:100%;
+	}
+	@include media(m){
+		width:25%;
+		padding:1.5em 0 0 2em;
+		margin:0 3em 0 0;
 		display:block;
-		border-bottom:#999999 solid 1px;
+	}
+	a{
 		@include media(m){
-			padding:2em 0;
+			position:relative;
 		}
-		dt{
-			width:60%;
-			float:left;
-			padding:1.5em 1em 1.5em 2em;
-			display:block;
+		&:after{
 			@include media(m){
-				width:40%;
-				padding:0 15% 0 0;
+				content: "\f015";
+				font-family: 'icomoon';
+				position:absolute;
+				right:-2em;
+				bottom:-1em;
+				font-size:0.8em;
+				text-align: center;
+				display: inline-block;
 				vertical-align:middle;
-			}
-			a{
-				@include media(m){
-					position:relative;
-				}
-				&:after{
-					@include media(m){
-						content: "\f015";
-						font-family: 'icomoon';
-						position:absolute;
-						right:-2em;
-						bottom:-1em;
-						font-size:0.8em;
-						text-align: center;
-						display: inline-block;
-						vertical-align:middle;
-						border-radius: 50%;
-						width: 1.5em;
-						height: 1.5em;
-						line-height: 1.5em;
-						color:#FFF;
-						-webkit-transition: all .2s ease;
-					    transition: all .2s ease;
-						background:#666;
-					}
-				}
-				&:hover:after{
-					@include media(m){
-						background:#ccc;
-					}
-				}
+				border-radius: 50%;
+				width: 1.5em;
+				height: 1.5em;
+				line-height:1.5em;
+				color:#FFF;
+				-webkit-transition: all .2s ease;
+			    transition: all .2s ease;
+				background:#666;
 			}
 		}
-		dd{
-			display:none;
+		&:hover:after{
 			@include media(m){
-				width:60%;
-				float:left;
-				display:block;
-				padding:0 0 0 2em;
-				text-align:right;
+				background:#ccc;
 			}
-		}
-		.header__siteTitle img{
-			width:100%;
-		}
-	}
-    &__tel {
-		@include media(m){
-			font-size:1.8em;
-			vertical-align:middle;
-			color:#68b0b5;
-			margin:0 0.5em 0 0;
-		}
-	}
-    &__telSent {
-		@include media(m){
-			background:#ff3414;
-			color:#FFF;
-			line-height:2.1em;
-			vertical-align:middle;
-			padding:0.2em 1em;
-		  	border-radius: 0.2em 0.2em 0.2em 0.2em;
 		}
 	}
 }
 
-#home .header__siteTitleBox dt a:after{
+#home .header__siteTitle a:after{
 	@include media(m){
 		content: none;
 	}
 }
+
+#pageTopFix.is-scroll .header__siteTitle{
+	@include media(m){
+		width:100%;
+		padding:1em 1.5em 0.5em 1em;
+	}
+	a:after{
+		@include media(m){
+			right:-2em;
+			bottom:0;
+		}
+	}
+}
+
+.header__siteTitleBox{
+	&__sent{
+		display:none;
+		@include media(m){
+			font-size:0.7em;
+			display:inline-block;
+			vertical-align:middle;
+			padding:3em 0 0 0;
+			float:right;
+		}
+		@include media(xl){
+			font-size:0.8em;
+		}
+	}
+	&__btn{
+		display:none;
+		@include media(m){
+			font-size:0.9em;
+			float:right;
+			display:inline-block;
+			vertical-align:middle;
+			margin:2.5em 0 0 0;
+		}
+		a{
+			padding:0.1em 0.5em;
+			background:#FFF;
+			border:$color-link solid 1px;
+			margin:0 0 0 1em;
+			display:inline-block;
+			vertical-align:middle;
+			&:after{
+				content: "\f0da";
+				font-family: 'icomoon';
+				margin:0 0 0 0.5em;
+			}
+		}
+	}
+}
+
+.header__infoBox {
+	display:none;
+	@include media(m){
+		clear:both;
+		display:block;
+		margin:0 0 0.5em 0;
+	}
+	&__info{
+		@include media(m){
+			margin:1em 0 0 0;
+			width:38%;
+			float:left;
+			display:block;
+		}
+		@include media(xl){
+			margin:0.7em 0 0 0;
+		}
+	}
+}
+
+.header__description{
+	display:none;
+	@include media(m){
+		font-size:0.7em;
+		display:inline-block;
+		vertical-align:middle;
+		padding:3em 0 0 0;
+	}
+	@include media(xl){
+		font-size:0.8em;
+		padding:3em 0 0 0;
+	}
+}
+
+#pageTopFix.is-scroll{
+	.header__infoBox{
+		@include media(m){
+			clear:none;
+		}
+		&__info{
+			@include media(m){
+				display:none;
+			}
+		}
+	}
+	.header__description{
+		@include media(m){
+			display:none;
+		}
+	}
+	.header__siteTitleBox__sent{
+		@include media(m){
+			display:none;
+		}
+	}
+	.header__siteTitleBox__btn{
+		@include media(m){
+			display:none;
+		}
+	}
+}
+
+
+
+.header__tel{
+	@include media(m){
+		font-size:1.4em;
+		color:$colorType02;
+		margin:0 0.5em 0 1.5em;
+		display:inline-block;
+		vertical-align:middle;
+	}
+	@include media(xl){
+		font-size:1.8em;
+	}
+}
+
+.header__telSent{
+	@include media(m){
+		font-size:0.7em;
+		color:#FFF;
+		padding:0.1em 0.5em;
+		background:$colorType02;
+	  	border-radius: 0.2em 0.2em 0.2em 0.2em;
+		margin:0 1em 0 0;
+		display:inline-block;
+		vertical-align:middle;
+	}
+}
+
+
+

@@ -1,97 +1,99 @@
+﻿/* .globalNavi　グローバルナビ 
+------------------------------------------ */
 .globalNavi {
 	display:none;
 	@include media(m){
+		width:62%;
 		display:block;
+		border-top:#9bba63 solid 1px;
+		float:left;
 	}
 }
 
-// .globalNaviSmall　グローバルナビ ハンバーガーメニュー
-.globalNaviSmall {
-	&__icon {
-		width: 3em;
-		height: 3em;
-		position: absolute;
-		top:0;
-		right:0;
+#pageTopFix.is-scroll .globalNavi{
+	@include media(m){
+		width:75%;
 	}
-	&__iconButton{
-		width: 3em;
-		height: 3em;
-		cursor:pointer;
-		float: right;
-		display: block;
-		background: rgba(1,35,110,0.45);
-		position: relative;
-		margin:0.5em 0.5em 0.5em 0.5em;
-	  	border-radius: 0.3em 0.3em 0.3em 0.3em;
-	}
-	&__icon span {
-	    width: 2em;
-	    height: 1px;
-	    display: block;
-	    background: #FFF;
-	    position: absolute;
-	    left: 50%;
-	    top: 50%;
-	    margin-left: -33%; 
-	}
+}
+
+
+/* .globalNaviSmall　グローバルナビ スマートフォン用
+------------------------------------------ */
+
+/* ハンバーガーメニュー*/
+.globalNaviSmall__icon {
+	width: 3em;
+	height: 3em;
+	position: absolute;
+	top:0;
+	right:0;
+}
+
+.globalNaviSmall__iconButton{
+	width: 3em;
+	height: 3em;
+	cursor:pointer;
+	float: right;
+	display: block;
+	background: rgba($colorType02,0.45);
+	position: relative;
+	margin:0.5em 0.5em 0.5em 0.5em;
+  	border-radius: 0.3em 0.3em 0.3em 0.3em;
+}
+  
+.globalNaviSmall__icon span {
+    width: 2em;
+    height: 1px;
+    display: block;
+    background: #FFF;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -33%; 
 }
 	
+/* ハンバーガーメニュー 押す前*/
+.globalNaviSmall__icon--type01 span {
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg); }
 
-.globalNaviSmall{
-	&__icon--type01{
-		// ハンバーガーメニュー 押す前
-		span {
-		  -webkit-transition: all 0.3s;
-		          transition: all 0.3s;
-		  -webkit-transform: rotate(0deg);
-		      -ms-transform: rotate(0deg);
-		          transform: rotate(0deg); 
-		}
-		.iconButton--top {
-		  -webkit-transform: translateY(-0.7em);
-		      -ms-transform: translateY(-0.7em);
-		          transform: translateY(-0.7em); 
-		}
-		.iconButton--bottom {
-		  -webkit-transform: translateY(0.7em);
-		      -ms-transform: translateY(0.7em);
-		          transform: translateY(0.7em); 
-    	}
+.globalNaviSmall__icon--type01 .iconButton--top {
+  -webkit-transform: translateY(-0.7em);
+      -ms-transform: translateY(-0.7em);
+          transform: translateY(-0.7em); }
 
-    	// ハンバーガーメニュー hover
-		&:hover {
-			.iconButton--top {
-			  -webkit-transform: translateY(-0.8em);
-			      -ms-transform: translateY(-0.8em);
-			          transform: translateY(-0.8em);
-			}
-			.iconButton--bottom {
-			  -webkit-transform: translateY(0.8em);
-			      -ms-transform: translateY(0.8em);
-			          transform: translateY(0.8em); 
-          	}
-    	}
+.globalNaviSmall__icon--type01 .iconButton--bottom {
+  -webkit-transform: translateY(0.7em);
+      -ms-transform: translateY(0.7em);
+          transform: translateY(0.7em); }
 
-    	// ハンバーガーメニュー 押した後の動き
-		&.is-open {
-			.iconButton--middle {
-			  background: rgba(255, 255, 255, 0);
-			}
-			.iconButton--top {
-			  -webkit-transform: rotate(-45deg) translateY(0px);
-			      -ms-transform: rotate(-45deg) translateY(0px);
-			          transform: rotate(-45deg) translateY(0px); 
-			}
-			.iconButton--bottom {
-				  -webkit-transform: rotate(45deg) translateY(0px);
-				      -ms-transform: rotate(45deg) translateY(0px);
-				          transform: rotate(45deg) translateY(0px);
-			}
-    	}
-	}
-}
+/* ハンバーガーメニュー hover*/
+.globalNaviSmall__icon--type01:hover .iconButton--top {
+  -webkit-transform: translateY(-0.8em);
+      -ms-transform: translateY(-0.8em);
+          transform: translateY(-0.8em); }
 
+.globalNaviSmall__icon--type01:hover .iconButton--bottom {
+  -webkit-transform: translateY(0.8em);
+      -ms-transform: translateY(0.8em);
+          transform: translateY(0.8em); }
+
+/* ハンバーガーメニュー 押した後の動き*/
+.globalNaviSmall__icon--type01.is-open .iconButton--middle {
+  background: rgba(255, 255, 255, 0); }
+
+.globalNaviSmall__icon--type01.is-open .iconButton--top {
+  -webkit-transform: rotate(-45deg) translateY(0px);
+      -ms-transform: rotate(-45deg) translateY(0px);
+          transform: rotate(-45deg) translateY(0px); }
+
+.globalNaviSmall__icon--type01.is-open .iconButton--bottom {
+  -webkit-transform: rotate(45deg) translateY(0px);
+      -ms-transform: rotate(45deg) translateY(0px);
+          transform: rotate(45deg) translateY(0px); }
 
 
 /* .globalNaviSmall　スマホグローバルナビ
@@ -109,8 +111,8 @@
 	&__menu{
 		padding:1em;
 		display:none;
-		background:rgba(224,224,224,0.95);
-		&__main{
+		background:rgba($color-link,0.95);
+		&__main {
 			width:100%;
 			height:100vh;
 			overflow:auto;
@@ -130,157 +132,225 @@
 					}
 				}
 			}
-			>li:last-child {
+			&>li:last-child {
 				margin-bottom:5em;
 			}
-		}
-		&__sub li{
-  			padding:0 0 0 1em;
+			&__sub li{
+			  	padding:0 0 0 1em;
+			}
 		}
 	}
 }
 
 
-//以下768px以上で適用される　レイアウトの指定-----------------------------------------------
+
 @include media(m){
+/*  768px以上で適用される　レイアウトの指定  */
 
-.globalNavi{
-	&__menu{
-		&__main{
-			>li {
-				width: 168px;
-				width: 16.6%;
-				height: 5em;
-				padding:1em 0 0 0;
-				text-align:center;
-				display:block;
-				float: left;
-			   	position: relative; /*z-indexの指定や子要素の基準とするために指定*/
-			   	z-index: 2; /*ドロップダウンしたメニューが隠れないように*/
-				&.pR{
-					float: right;
-				}
-				>a:before{
-					content:" ";
-					width:1px;
-					height:2em;
-					background:#CCC;
-					display:block;
-					position:absolute;
-					top:50%;
-					margin-top:-1em;
-					left:0;
-				}
-				>&:last-child a:after{
-					content:" ";
-					width:1px;
-					height:2em;
-					background:#CCC;
-					display:block;
-					position:absolute;
-					top:50%;
-					margin-top:-1em;
-					right:0;
-				}
-				a small{
-					text-align:center;
-					font-size:0.65em;
-					display:block;
-				}
-			}
-			li a {
-				text-decoration:none;
-				display:block;
-				&:hover { 
-					text-decoration:none;
-				}
-			}
-			&__btn--type01{
-				width:90%;
-				background: rgba(0,0,0,0.45);
-				padding:0.5em;
-				margin:0 auto;
-				position:absolute;
-				top:15%;
-				font-size:0.9em;
-				left:5%;
-				display:block;
-				color:#FFF;
-				-webkit-transition: all .2s ease;
-			    transition: all .2s ease;
-			    a:hover &{
-			    	background:#AAA;
-			    }
-			}
+.globalNavi__menu__main>li {
+	width: 20%;
+	height: 4em;
+	padding:1.5em 1em 0 0.8em;
+	display:block;
+	float: left;
+   	position: relative; /*z-indexの指定や子要素の基準とするために指定*/
+   	z-index: 2; /*ドロップダウンしたメニューが隠れないように*/
+	font-size:0.9em;
+	&.pR {
+		float: right;
+	}
+	a{
+		&:before {
+			content:" ";
+			width:3px;
+			height:1.4em;
+			background:#d2c168;
+			display:block;
+			position:absolute;
+			top:1.5em;
+			left:0;
+		}
+		&:hover {
+			color:$colorType04;
+		}
+	}
+	&:nth-child(1) {
+		width: 16%;
+	}
+	&:nth-child(2) {
+		width: 21%;
+	}
+	&:nth-child(3) {
+		width: 15%;
+	}
+	&:nth-child(4) {
+		width: 23%;
+	}
+	&:last-child {
+		padding-top:1em;
+		padding-right:0;
+		padding-left:0;
+		text-align:right;
+		a:hover {
+			color: #cab9fc;
+		}
+	}
+	&:last-child a:before {
+		content:none;
+	}
+}
+
+.globalNavi__menu__main__btn--type01{
+	a{
+	    color: lighten($colorType03,80%);
+		background-color: lighten($colorType03,15%);
+	    border-color: lighten($colorType03,10%);
+	    border-bottom-color: lighten($colorType03,5%);
+	    box-shadow: 
+	    	0 1px 1px -1px rgba(255, 255, 255, 0.9) inset, 
+	    	0 40px 20px -20px rgba(255, 255, 255, 0.15) inset, 
+	    	0 -1px 1px -1px rgba(0, 0, 0, 0.7) inset, 
+	    	0 -40px 20px -20px rgba(0, 0, 0, 0.06) inset;
+
+		display: inline-block;
+	    font-size: 0.9em;
+	    line-height: 1.42;
+	    padding: 0.5em 1.5em 0.5em 0.5em;
+	    font-weight: normal;
+	    border-width: 2px;
+	    border-style: solid;
+	    background: transparent;
+	    border-radius: 0.2em;
+	    vertical-align: bottom;
+    	overflow: hidden;
+	    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+	    transition: box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+	    position: relative;
+	    &::before{
+		    content: " ";
+		    display: block;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    height: 100%;
+		    width: 100%;
+		    transform: rotate(-19deg) translateY(-1.3em) scale(1.05);
+		    filter: blur(1px);
+		    background-image: 
+		    	linear-gradient(-90deg, 
+		    		rgba(255, 255, 255, 0.12) 20%, 
+		    		rgba(255, 255, 255, 0));
+		}
+		&::after{
+		    content: "\f0da";
+			font-family: 'icomoon';
+		    position: absolute;
+		    top: 50%;
+		    right: 0.7em;
+		    margin-top:-0.65em;
+		    transition: all 0.5s;
+		}
+		&:hover{
+			background-color: #7b4ff7;
+		    transition: all 0.5s;
+		    background-color: lighten($colorType03,20%);
+		}
+		&:hover::after{
+			right: 0.5em;
 		}
 	}
 }
+
+
+.globalNavi ul li a:hover { text-decoration:none; }
 
 /* When Active Page */
-body#home .globalNavi ul.globalNavi__menu__main>li:nth-child(1)>a {color:#EEE !important;}
-body#page .globalNavi ul.globalNavi__menu__main>li:nth-child(2)>a {color:#EEE !important;}
-body#■■ .globalNavi ul.globalNavi__menu__main>li:nth-child(3)>a {color:#EEE !important;}
-body#■■ .globalNavi ul.globalNavi__menu__main>li:nth-child(4)>a {color:#EEE !important;}
-body#■■ .globalNavi ul.globalNavi__menu__main>li:nth-child(5)>a {color:#EEE !important;}
-body#■■ .globalNavi ul.globalNavi__menu__main>li:nth-child(6)>a {color:#EEE !important;}
+body#cost .globalNavi ul.globalNavi__menu__main>li:nth-child(1)>a {filter:alpha(opacity=50); -moz-opacity: 0.5; opacity: 0.5; pointer-events: none;}
+body#funeral .globalNavi ul.globalNavi__menu__main>li:nth-child(2)>a {filter:alpha(opacity=30); -moz-opacity: 0.3; opacity: 0.3; pointer-events: none;}
+body#consultation .globalNavi ul.globalNavi__menu__main>li:nth-child(3)>a {filter:alpha(opacity=50); -moz-opacity: 0.5; opacity: 0.5; pointer-events: none;}
+body#hall .globalNavi ul.globalNavi__menu__main>li:nth-child(4)>a {filter:alpha(opacity=50); -moz-opacity: 0.5; opacity: 0.5; pointer-events: none;}
+body#contact .globalNavi ul.globalNavi__menu__main>li:nth-child(5)>a {filter:alpha(opacity=50); -moz-opacity: 0.5; opacity: 0.5; pointer-events: none;}
+
+body#company .header__siteTitleBox__btn a{filter:alpha(opacity=50); -moz-opacity: 0.5; opacity: 0.5; pointer-events: none;}
 
 
-// globalNavi__menu__sub
-.globalNavi {
-	ul{
-		li{
-			ul.globalNavi__menu__sub {
-				width:100%;
-			  	opacity: 0;  /*サブメニューは最初は非表示にしておく*/
-			  	visibility: hidden;  /*サブメニューは最初は非表示にしておく*/
-			  	position: absolute;  /*絶対配置にしておかないとうまくいかない*/
-			  	top: 3.7em;
-			  	left: 0;
-			  	border-top: 1px solid #EEE;  /*ボーダートップを指定*/
-			    -webkit-transition: all .2s ease;
-			    transition: all .2s ease;
-			    li{
-					height:auto;
-				  	float: none;  /*サブメニューはフロートさせないので解除*/
-				  	padding: 0;  /*親メニューのパディングを解除*/
-					margin:0;
-					*margin-top:-8px;
-					display:block;
-					line-height:1.5em;
-					a{
-					  	border: 1px solid #eee;  /*ボーダーの指定*/
-					  	border-top: none;  /*ボーダートップは重なって太くなるので解除。一番上は ul 要素に指定*/
-					  	padding: 0.8rem 0;
-					  	background-color: #FFF;
-						text-decoration:none;
-					  	color: #666;
-						text-align:center;
-						display:block;
-						font-size:0.9em;
-						&:hover{ 
-							color:#000;
-						  	background-color: #EEE;
-						}
-					}
-				}
-			}
-			&:hover ul.globalNavi__menu__sub {
-				width:100%;
-			  	top: 3.9em;
-			    visibility:visible;
-			    opacity: 1;
-			  	display: block;    /*マウスオーバー時にサブメニューを表示する*/
-			}
-		}
+/* globalNavi__menu__sub */
+.globalNavi ul li {
+	ul.globalNavi__menu__sub {
+		width:100%;
+	  	opacity: 0;  /*サブメニューは最初は非表示にしておく*/
+	  	visibility: hidden;  /*サブメニューは最初は非表示にしておく*/
+	  	position: absolute;  /*絶対配置にしておかないとうまくいかない*/
+	  	top: 3.7em;
+	  	left: 0;
+	  	border-top: 1px solid #EEE;  /*ボーダートップを指定*/
+	    -webkit-transition: all .2s ease;
+	    transition: all .2s ease;
+	    li {
+			height:auto;
+		  	float:none; /*サブメニューはフロートさせないので解除*/
+		  	padding:0;  /*親メニューのパディングを解除*/
+			margin:0;
+			*margin-top:-8px;
+			display:block;
+			line-height:1.5em;
+	    }
+	}
+	&:hover ul.globalNavi__menu__sub {
+		width:100%;
+	  	top: 3.9em;
+	    visibility:visible;
+	    opacity: 1;
+	  	display: block;    /*マウスオーバー時にサブメニューを表示する*/
 	}
 }
-	
+
+
+.globalNavi ul.globalNavi__menu__main li ul.globalNavi__menu__sub li a {  
+  	border: 1px solid #eee;  /*ボーダーの指定*/
+  	border-top: none;  /*ボーダートップは重なって太くなるので解除。一番上は ul 要素に指定*/
+  	padding: 0.8rem 0;
+  	background-color: #FFF;
+	text-decoration:none;
+  	color: #666;
+	text-align:center;
+	font-size:0.9em;
+	display:block;
+	&:before {
+		content:none;
+	}
+	&:hover { 
+		color:#000;
+	  	background-color: $color-link;
+	}
+}
+
 .globalNavi.globalNaviAccordion ul.globalNavi__menu__sub li{
   	padding:0;
 }
 
+#flow .globalNavi ul.globalNavi__menu__main li:nth-child(2) ul.globalNavi__menu__sub li:nth-child(1) a { color:#999; background-color: #fbf2c5; pointer-events: none;
+}
+#offering .globalNavi ul.globalNavi__menu__main li:nth-child(2) ul.globalNavi__menu__sub li:nth-child(2) a { color:#999; background-color: #fbf2c5; pointer-events: none;
+}
+#cuisine .globalNavi ul.globalNavi__menu__main li:nth-child(2) ul.globalNavi__menu__sub li:nth-child(3) a { color:#999; background-color: #fbf2c5; pointer-events: none;
+}
+#question .globalNavi ul.globalNavi__menu__main li:nth-child(2) ul.globalNavi__menu__sub li:nth-child(4) a { color:#999; background-color: #fbf2c5; pointer-events: none;
+}
 
 
 
+} /* 768px以上で適用される　レイアウトの指定　ここまで */
+
+@include media(xl){
+/*  1200px以上で適用される　レイアウトの指定  */
+.globalNavi__menu__main__btn--type01 a{
+	 padding: 0.5em 2em 0.5em 1.5em;
 } 
-// 768px以上で適用される　レイアウトの指定　ここまで
+
+
+
+
+
+
+} /* 1200px以上で適用される　レイアウトの指定　ここまで */

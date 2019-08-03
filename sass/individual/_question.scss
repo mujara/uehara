@@ -1,0 +1,489 @@
+.questionExampleBox{
+	clear:both;
+	margin:0 0 $spaceSize*3;
+	position:relative;
+	@extend .clearfix;
+	&::before{
+		content:" ";
+		width:80%;
+		height:1px;
+		position:absolute;
+		bottom:0;
+		right:-10%;
+		background:#9bba63;
+	}
+	&__question{
+		position:relative;
+		background:#dbf7cb;
+		padding:$spaceSize*2 $spaceSize $spaceSize $spaceSize;
+		display:block;
+		margin:0 0 $spaceSize*2 0;
+		@include media(m){
+			width:45%;
+			float:left;
+			margin:0 0 $spaceSize 0;
+		}
+		@include media(xl){
+			padding:$spaceSize*3 $spaceSize*2 $spaceSize*2 $spaceSize*2;
+		}
+	}
+	&__questionLead{
+		color:$colorType03;
+		font-size:0.8em;
+		b{
+			font-size:3em;
+		}
+		position:absolute;
+		top:-2em;
+		left:-1em;
+	}
+	&__questionTitle{
+		font-size:1.24em;
+		font-weight:bold;
+		margin:0 0 $spaceSize/2;
+	}
+	&__answer{
+		margin:0 0 $spaceSize*2 0;
+		display:block;
+		position:relative;
+		padding:2.5em 0 0 0;
+		@include media(m){
+			width:50%;
+			float:right;
+			margin:$spaceSize*3 0 $spaceSize*2 0;
+			padding:2.5em 0 0 3em;
+		}
+		@include media(xl){
+			margin:$spaceSize*5 0 $spaceSize*5 0;
+		}
+	}
+	&__answerLead{
+		color:$colorType04;
+		font-size:0.8em;
+		b{
+			font-size:3em;
+			&::before{
+				content: "\f178";
+				font-family: 'icomoon';
+				margin:0 0.2em 0 0;
+			}
+		}
+		position:absolute;
+		top:-2em;
+		left:0;
+	}
+	&__answerTitle{
+		font-size:1.24em;
+		font-weight:bold;
+		margin:0 0 $spaceSize/2;
+	}
+	&__answerSent{
+		font-size:0.9em;
+	}
+}
+
+.questionKnowledgeBox01{
+	margin:0 0 $spaceSize*2;
+	@extend .clearfix;
+	&__left{
+		display:block;
+		@include media(m){
+			width:75%;
+			float:left;
+		}
+	}
+	&__right{
+		display:block;
+		@include media(m){
+			width:22%;
+			float:right;
+		}
+		.table--type01{
+			th{
+				@include media(m){
+					width:40%;
+				}
+			}
+			small{
+				font-size:0.8em;
+				line-height:1;
+			}
+			b{
+				font-size:1.24em;
+			}
+		}
+	}
+	&__flowBox{
+		padding:$spaceSize;
+		padding-top:$spaceSize*2.5;
+		margin:0 0 $spaceSize*2;
+		border:#b1cc78 solid 3px;
+		position:relative;
+		@extend .clearfix;
+		@include media(xl){
+			padding:$spaceSize*2;
+			padding-top:$spaceSize*3;
+		}
+	}
+	&__flowTitle{
+		background:#b1cc78;
+		padding:0.5em 1em;
+		position:absolute;
+		top:0;
+		left:0;
+	}
+	&__flow{
+		&--type01{
+			width:50%;
+			float:left;
+			padding:0 1em;
+			display:block;
+			@include media(m){
+				width:25%;
+			}
+			&:last-child{
+				figure::after{
+					content:none;
+				}
+			}
+			figure{
+				position:relative;
+				border:#c2dca2 solid 1px;
+				margin:$spaceSize 0 $spaceSize/2;
+				&::after{
+					content:" ";
+					border-top: 2em solid transparent;
+					border-bottom: 2em solid transparent;
+					border-left: 2em solid #c2dca2 ;
+					position:absolute;
+					right:-2em;
+					top:50%;
+					margin-top:-1.5em;
+				}
+				figcaption{
+					position:absolute;
+					background:$colorType02;
+					padding:0.1em 0.5em;
+					color:#FFF;
+					bottom:0;
+					left:0;
+				}
+			}
+			p{
+				font-size:0.8em;
+			}
+		}
+		&--type02{
+			width:100%;
+			float:left;
+			padding:0 1em;
+			display:block;
+			@include media(m){
+				width:33.3%;
+			}
+			&:last-child{
+				p::after{
+					content:none;
+				}
+			}
+			p{
+				position:relative;
+				border:#c2dca2 solid 1px;
+				margin:$spaceSize 0 $spaceSize/2;
+				padding:$spaceSize/2;
+				padding-left:$spaceSize*2;
+				background:#FFF;
+				display:block;
+				font-size:0.8em;
+				@include media(m){
+					padding:$spaceSize;
+					padding-left:$spaceSize*2;
+				}
+				&::after{
+					content:" ";
+					border-top: 2em solid #c2dca2;
+					border-right: 2em solid transparent;
+					border-left: 2em solid transparent;
+					position:absolute;
+					right:50%;
+					bottom:-2em;
+					margin-right:-2em;
+					@include media(m){
+						border-right: none;
+						border-top: 2em solid transparent;
+						border-bottom: 2em solid transparent;
+						border-left: 2em solid #c2dca2 ;
+						position:absolute;
+						right:-2em;
+						bottom:auto;
+						top:50%;
+						margin-right:0;
+						margin-top:-2em;
+					}
+				}
+				span{
+					position:absolute;
+					background:$colorType02;
+					padding:0.1em 0.5em;
+					color:#FFF;
+					top:0;
+					left:0;
+					font-size:1.2em;
+				}
+			}
+		}
+	}
+}
+
+.questionKnowledgeBox02{
+	&__titleBox{
+		display:block;
+		margin:0 0 $spaceSize;
+		@include media(m){
+			margin:0 0 $spaceSize*2;
+		}
+		dl{
+			display:display;
+			@include media(m){
+				display:flex;
+			}
+			dt{
+				background:$colorType02;
+				padding:0.2em 1em;
+				height:100%;
+				color:#FFF;
+				margin:0 0 $spaceSize/2;
+				text-align:center;
+				@include media(m){
+					margin:0 1em 0 0;
+				}
+			}
+		}
+	}
+	&__title{
+		display:block;
+		margin:0 0 $spaceSize/2;
+		b{
+			font-size:1.6em;
+			margin-right:1em;
+			display:block;
+			@include media(m){
+				font-size:1.85em;
+				display:inline;
+			}
+		}
+	}
+	&__contentBox01{
+		display:display;
+		@extend .clearfix;
+		@include media(m){
+			display:flex;
+		}
+	}
+	&__contentBox01Inner{
+		margin-bottom:$spaceSize;
+		@extend .clearfix;
+		@include media(m){
+			margin-bottom:$spaceSize*2;
+		}
+		&:nth-child(1){
+			width:100%;
+			@include media(m){
+				width:50%;
+				border-right:#9bba63 solid 1px;
+				padding-right:$spaceSize;
+			}
+			.questionKnowledgeBox02__contentBox01Image{
+				width:50%;
+				padding:0 1em 0 0;
+				float:left;
+			}
+			.questionKnowledgeBox02__contentBox01Description{
+				width:50%;
+				float:right;
+				padding-top:$spaceSize*4;
+				@include media(m){
+					padding-top:$spaceSize*4;
+				}
+				@include media(xl){
+					padding-top:$spaceSize*6;
+				}
+				dt{
+					position:relative;
+					&::before{
+						content:" ";
+						width:4em;
+						height:1px;
+						background:#8ba460;
+						position:absolute;
+						top:1em;
+						left:-4.5em;
+						display:block;
+					}
+				}
+			}
+			figure{
+				position:relative;
+				margin:$spaceSize*2 0 0 0;
+				figcaption{
+					position:absolute;
+					top:-2em;
+					left:0;
+					text-align:left;
+				}
+			}
+		}
+		&:nth-child(2){
+			width:49%;
+			border-right:#9bba63 solid 1px;
+			padding-right:$spaceSize/2;
+			float:left;
+			@include media(m){
+				width:25%;
+				padding-left:$spaceSize;
+				padding-right:$spaceSize;
+				float:none;
+			}
+			.questionKnowledgeBox02__contentBox01Image{
+				width:50%;
+				margin:0 auto $spaceSize;
+			}
+			figure{
+				position:relative;
+				figcaption{
+					position:absolute;
+					top:0;
+					left:-2em;
+					text-align:left;
+				}
+			}
+		}
+		&:nth-child(3){
+			width:49%;
+			padding-left:$spaceSize/2;
+			float:right;
+			@include media(m){
+				padding-left:$spaceSize;
+				width:25%;
+				float:none;
+			}
+			.questionKnowledgeBox02__contentBox01Image{
+				width:50%;
+				margin:0 auto $spaceSize;
+			}
+			figure{
+				position:relative;
+				figcaption{
+					position:absolute;
+					top:0;
+					left:-2em;
+					text-align:left;
+				}
+			}
+		}
+	}
+	&__contentBox01Description{
+		dt{
+			font-size:1.2em;
+			font-weight:bold;
+		}
+		dd{
+			font-size:0.8em;
+			@include media(m){
+				font-size:1em;
+			}
+		}
+	}
+	&__contentBox02{
+		display:display;
+		clear:both;
+		@include media(m){
+			display:flex;
+		}
+	}
+	&__contentBox02Inner{
+		border:$colorType02 solid 1px;
+		padding:$spaceSize;
+		padding-top:$spaceSize*3;
+		position:relative;
+		margin:0 0 $spaceSize;
+		@extend .clearfix;
+		@include media(m){
+			margin:0 0.5em $spaceSize;
+			padding-bottom:0;
+			width:33.3%;
+		}
+		@include media(xl){
+			padding:$spaceSize*2;
+			padding-top:$spaceSize*4;
+			padding-bottom:0;
+		}
+		&:nth-child(1){
+			padding-left:$spaceSize/2;
+			padding-right:$spaceSize/2;
+			@include media(xl){
+				padding-left:$spaceSize;
+				padding-right:$spaceSize;
+			}
+		}
+	}
+	&__contentBox02InnerTitle{
+		background:#dbf7cb;
+		text-align:center;
+		padding:0.5em;
+		width:100%;
+		position:absolute;
+		top:0;
+		left:0;
+	}
+	&__contentBox02InnerPart01{
+		width:50%;
+		float:left;
+		padding:0 0.5em;
+		@include media(xl){
+			padding:0 0.5em;
+		}
+		p{
+			font-size:0.9em;
+		}
+	}
+	&__contentBox02InnerPart02{
+		clear:both;
+		margin:0 0 $spaceSize;
+		display:block;
+		@extend .clearfix;
+		figure{
+			width:35%;
+			padding:0 1em 0 0;
+			float:left;
+		}
+		p{
+			width:65%;
+			float:right;
+			font-size:0.9em;
+		}
+	}
+	&__contentBox02InnerPart03{
+		display:block;
+		figure{
+			width:30%;
+			margin:0 auto $spaceSize;
+		}
+		p{
+			font-size:0.9em;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

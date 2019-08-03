@@ -1,0 +1,51 @@
+.companyBusinessContentBox{
+	display:block;
+	clear:both;
+	margin:0 0 $spaceSize*2 0;
+	@extend .clearfix;
+	@include media(xl){
+		width:90%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	&__businessContent{
+		display:block;
+		width:50%;
+		float:left;
+		padding:$spaceSize/2;
+		@include media(m){
+			width:33.3%;
+			padding:$spaceSize;
+		}
+	}
+	dt{
+		width:30%;
+		float:left;
+		display:block;
+		margin:0 0.5em 0.5em 0;
+		background:$colorType05;
+		@include media(xl){
+			margin:0 1em 0.5em 0;
+		}
+	}
+	&__businessTitle h4{
+		font-size:1.24em;
+		color:$colorType02;
+		font-weight:bold;
+		@include media(m){
+			font-size:1.8em;
+		}
+	}
+	dd{
+		font-size:0.8em;
+		@include media(m){
+			font-size:0.9em;
+		}
+	}
+}
+
+.companyGreetingSent{
+	@include media(m){
+		padding:0 0 0 30%;
+	}
+}

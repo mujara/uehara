@@ -1,0 +1,139 @@
+.Section{
+	@include media(m){
+	}
+	@include media(xl){
+	}
+}
+
+.hallIntroductionSection{
+	&__image{
+		z-index:-1;
+	}
+	.inBase{
+		position:relative;
+		padding:3em 0 0 0;
+	}
+	.sectionLead--type01{
+		background:$colorType01;
+		padding:1.5em 0 0;
+		display:block;
+		width:70%;
+		text-align:center;
+		@include z-index(default);
+		position:absolute;
+		top:-2em;
+		left:50%;
+		margin-left:-35%;
+	}
+}
+
+.hallInfoSection{
+	&__imageBox{
+		figure{
+			position:relative;
+		}
+		figcaption{
+			position:absolute;
+			padding:0.2em 0.5em;
+			background:$colorType04;
+			bottom:0;
+			right:0;
+			color:#FFF;
+			font-size:0.8em;
+			@include media(m){
+				padding:0.5em 1em;
+			}
+		}
+	}
+}
+
+.hallFeature{
+	&__title{
+		position:relative;
+		padding:2em 0 0 3em;
+		margin:0 0 $spaceSize;
+		span{
+			background:#9bba63;
+			padding:1em 0.5em;
+			position:absolute;
+			top:0;
+			left:0;
+		}
+		&::before{
+			content:" ";
+			width:60%;
+			height:1px;
+			background:#9bba63;
+			position:absolute;
+			top:0;
+			left:0;
+		}
+		p{
+			font-weight:bold;
+			font-size:1.2em;
+		}
+	}
+	&__sent{
+		background:#FFF;
+		padding:1.5em;
+	}
+}
+
+.hallFeatureBox{
+	>div:nth-child(2){
+		.hallFeature__title{
+			span{
+				background:#d2c168;
+			}
+			&::before{
+				background:#d2c168;
+			}
+		}
+	}
+	>div:nth-child(3){
+		.hallFeature__title{
+			span{
+				background:#ede78d;
+			}
+			&::before{
+				background:#ede78d;
+			}
+		}
+	}
+}
+
+.hallPriceSection{
+	.table--type01{
+		th{
+			font-size:0.9em;
+			padding:0.5em 0.5em;
+			border-right:$colorType02 solid 1px;
+			text-align:center;
+			span{
+				color:$colorType04;
+			}
+			&:nth-child(1).tC{
+				text-align:center;
+			}
+			&:nth-child(1){
+				text-align:right;
+			}
+			&.tR{
+				text-align:right;
+			}
+		}
+		td{
+			padding:0.5em 0.5em;
+			font-size:0.9em;
+			text-align:right;
+		}
+	}
+}
+
+.hallPriceSection{
+	&__add{
+		li{
+			padding:0 0 0 2em;
+		}
+	}
+}

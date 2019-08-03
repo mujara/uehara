@@ -1,0 +1,85 @@
+.flowPageNavi{
+	vertical-align:top;
+	@include media(m){
+		text-align:right;
+		padding:0 15% 0 0;
+	}
+	li{
+		margin-bottom:1px;
+		position:relative;
+		@include media(m){
+			-webkit-font-feature-settings: 'pkna';
+			font-feature-settings: 'pkna';
+			letter-spacing: 0.03em;
+			-webkit-writing-mode: vertical-rl;
+			-ms-writing-mode: tb-rl;
+			writing-mode: vertical-rl;
+			margin:0 0.6em;
+			font-size:1.2em;
+			display:inline-block;
+			text-align:left;
+			padding:2.5em 0 0 0;
+		}
+		a{
+			background:rgba($color-link,1);
+			display:block;
+			vertical-align:top;
+			padding:0.5em 1em;
+			@include media(m){
+			    height:14em;
+			    padding:1em 0.4em;
+				display:inline-block;
+			}
+			&:hover{
+			    background:rgba($color-link,.7);
+			    color:#000;
+			}
+			&:after{
+	  			content: "\f107";
+	  			font-size:1em;
+				font-family: 'icomoon';
+				position:absolute;
+				right:1em;
+				top:50%;
+				margin-top:-0.8em;
+				@include media(m){
+					bottom:1em;
+					left:50%;
+					top:auto;
+					right:auto;
+					margin-left:-0.8em;
+				}
+			}
+			&:before{
+				@include media(m){
+		  			content: "\f0da";
+		  			font-size:2em;
+					font-family: 'icomoon';
+					position:absolute;
+					color:$color-link;
+					top:50%;
+					right:-1em;
+				}
+			}
+			span{
+				background:$colorType02;
+				border-radius:2em;
+				color:#FFF;
+				font-size:0.8em;
+				margin:0 0.5em 0 0;
+				padding:0 0.2em;
+				text-combine-upright: all;
+				@include media(m){
+					border-radius:1em;
+					width:3em;
+					height:3em;
+					margin:0 0 0.5em;
+					padding:0.2em 0;
+				}
+			}
+		}
+		&:last-child a:before{
+			content: none;
+		}
+	}
+}

@@ -1,0 +1,192 @@
+.funeralPlaceTopBox{
+	position:relative;
+	@extend .clearfix;
+	&__mapImage{
+		width:60%;
+		padding:0 0 0 $spaceSize*2;
+		display:block;
+		position:absolute;
+		top:0;
+		left:-$spaceSize*2.9;
+		z-index:-1;
+		@include media(m){
+			width:50%;
+			top:0;
+			left:0;
+		}
+	}
+	&__inner{
+		width:75%;
+		display:block;
+		float:right;
+		@extend .clearfix;
+		@include media(m){
+			width:47%;
+		}
+	}
+	.sectionLead--type01{
+		margin-top:$spaceSize*2;
+		display:block;
+		text-align:left;
+	}
+	&__sent01{
+		clear:both;
+		@include media(xl){
+			width:83%;
+		}
+	}
+	&__sent02{
+		width:130%;
+		margin-left:-30%;
+		@include media(m){
+			width:100%;
+			margin-left:0;
+		}
+		@include media(xl){
+			width:83%;
+		}
+	}
+}
+
+.funeralPlaceBox{
+	@include media(m){
+		display:block;
+	}
+	&__title{
+		color:$colorType04;
+		text-align:center;
+		position:relative;
+		display:inline-block;
+		&::before{
+			content:" ";
+			width:5em;
+			height:1px;
+			position:absolute;
+			top:50%;
+			left:-6.5em;
+			background:#d2c168;
+			display:block;
+		}
+		&::after{
+			content:" ";
+			width:5em;
+			height:1px;
+			position:absolute;
+			top:50%;
+			right:-6.5em;
+			background:#d2c168;
+			display:block;
+		}
+	}
+	&__placeSent{
+		background:#FFF;
+		font-weight:bold;
+		text-align:center;
+		padding:$spaceSize/2 $spaceSize;
+		display:block;
+		@include media(m){
+			font-size:1.1em;
+		}
+	}
+}
+
+.funeralPlace{
+	&__image{
+		display:block;
+		position:relative;
+		margin-bottom:$spaceSize*2;
+	}
+	&__title{
+		display:block;
+		font-size:2em;
+		color:$colorType02;
+		padding:0.1em;
+		position:absolute;
+		line-height:1.1em;
+		bottom:-1.5em;
+		left:0;
+		font-weight:bold;
+		@include media(m){
+			bottom:-0.9em;
+			left:-0.4em;
+		}
+	}
+	&__name{
+		display:block;
+		font-size:2em;
+		color:$colorType02;
+		padding:0.1em;
+		font-weight:bold;
+		margin-top:$spaceSize;
+	}
+	&__sent{
+		margin:0 0 $spaceSize;
+		font-size:0.9em;
+		@include media(m){
+			margin:0;
+		}
+	}
+}
+
+.funeralReasonSection{
+	background:#FFF;
+	display:block;
+}
+
+.funeralReasonBox{
+	position:relative;
+	background:#faf7c4;
+	padding:$spaceSize 0 0;
+	@include media(m){
+		display: flex;
+		align-items: center;
+		padding:0;
+	}
+	&.--typeReverse{
+		background:none;
+		@include media(m){
+			flex-direction: row-reverse;
+		}
+	}
+}
+
+
+.funeralReason{
+	&__image{
+		width:90%;
+		margin-left:auto;
+		margin-right:auto;
+		@include media(m){
+			width:50%;
+		}
+	}
+	&__content{
+		text-align:center;
+		width:90%;
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:-1em;
+		@include media(m){
+			width:50%;
+			padding:0 2em;
+			margin-top:0;
+		}
+	}
+	&__contentNumber{
+		background:$colorType04;
+		color:#FFF;
+		padding:3px 1em;
+		font-size:0.8em;
+		margin:0 0 $spaceSize/2;
+		display:inline-block;
+		border-radius:0.3em;
+	}
+	&__contentTitle{
+		font-size:1.3em;
+		font-weight:bold;
+		margin:0 0 $spaceSize;
+		@include media(m){
+			font-size:1.5em;
+		}
+	}
+}

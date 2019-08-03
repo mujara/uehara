@@ -1,0 +1,253 @@
+.contactHurrySection{
+	@include media(m){
+		margin-top:$spaceSize*5;
+	}
+	.contactBox--type01{
+		@include media(m){
+			width:60%;
+			margin-left:auto;
+			margin-right:auto;
+		}
+		@include media(xl){
+			width:50%;
+		}
+	}
+}
+
+.contactFlowBox{
+	display: block;
+	@include media(m){
+		display: flex;
+	}
+	&__title{
+		display:block;
+		background:#FFF;
+		border-top:#b1cc78 solid 1px;
+		border-left:#b1cc78 solid 1px;
+		border-right:#b1cc78 solid 1px;
+		padding:1em 0;
+		text-align:center;
+		@include media(m){
+			width:5%;
+			border-right:none;
+			border-bottom:#b1cc78 solid 1px;
+			writing-mode: vertical-rl;
+			padding:1em 0.5em 1em 0;
+		}
+		@include media(xl){
+			padding:1em 1em 1em 0;
+		}
+	}
+	&__content{
+		display:block;
+		@include media(m){
+			width:95%;
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+}
+
+.contactFlow{
+	display:block;
+	background:#b1cc78;
+	position:relative;
+	padding:$spaceSize $spaceSize $spaceSize $spaceSize/2;
+	margin:0 0 1px;
+	@include media(m){
+		position:relative;
+		margin:0 0 0 $spaceSize;
+		padding:$spaceSize*1.5 $spaceSize/2 $spaceSize*1.5 $spaceSize;
+		display:block;
+		width:100%;
+	}
+	@include media(xl){
+		padding:$spaceSize*1.5 $spaceSize $spaceSize $spaceSize*2;
+	}
+	&::after{
+		color:#000;
+		content: "\f078";
+		font-family: 'icomoon';
+	    transition: all 0.5s;
+		position: absolute;
+		font-size:1.5em;
+		bottom: -0.5em;
+		right: 50%;
+		margin-right:-0.75em;
+		@include z-index(default);
+		@include media(m){
+			color:#000;
+			content: "\f054";
+			font-family: 'icomoon';
+			position: absolute;
+			font-size:3em;
+			bottom: auto;
+			top: 50%;
+			right: -0.4em;
+			margin-top:-0.5em;
+			margin-right:auto;
+		}
+	}
+	&:last-child{
+		&::after{
+			content: none;
+		}
+	}
+	span{
+		width:7%;
+		background:$colorType02;
+		color:#FFF;
+		padding:0.1em 0.5em;
+		display:inline-block;
+  		vertical-align: top;
+		@include media(m){
+			width:auto;
+			position:absolute;
+			top:0;
+			left:0;
+		}
+	}
+	p{
+		width:90%;
+		display:inline-block;
+		padding:0 0 0 0.5em;
+		@include media(m){
+			width:auto;
+			padding:0;
+		}
+	}
+}
+
+
+.contactQuestionBox {
+	@include media(m){
+		width:80%;
+		margin-left:auto;
+		margin-right:auto;
+  		padding: 1.5em;
+	}
+  	position: relative;
+  	padding: 1em;
+  	display:block;
+  	border-radius:0.5em;
+	margin-top: 1.5em;
+  	border: $colorType02 solid 0.25em;
+  	background:$colorType01;
+	&:before,&:after{
+		content: "";
+		position: absolute;
+		right: 0;
+		left: 0;
+		width: 0;
+		height: 0;
+		margin: auto;
+		@include media(m){
+			margin-left: 3em;
+		}
+	}
+	&:before{
+		top: -1.5em;
+		left: 0;
+		border-style: solid;
+		border-color: transparent transparent $colorType02 transparent;
+		border-width: 0 1.5em 1.5em 1.5em;
+	}
+	&:after{
+		top: -1.1em;
+		left: 0;
+		border-style: solid;
+		border-color: transparent transparent $colorType01 transparent;
+		border-width: 0 1.1em 1.1em 1.1em;
+		@include z-index(default);
+		@include media(m){
+			margin-left: 3.4em;
+		}
+	}
+	p{
+		font-size:1.24em;
+		font-weight:bold;
+	}
+}
+
+.contactQuestion{
+	li{
+		font-size:1.24em;
+		font-weight:bold;
+		span{
+			color:$colorType02;
+		}
+		small{
+			font-weight:normal;
+		}
+		&::before{
+  			content: "\f046";
+			font-family: 'icomoon';
+			margin-right:0.5em;
+		}
+	}
+}
+
+.contactExample{
+	background:#FFF;
+	display:block;
+	padding:$spaceSize;
+	@include media(xl){
+		padding:$spaceSize*2;
+	}
+	&__title{
+		font-size:1.24em;
+		font-weight:bold;
+		position:relative;
+		line-height:1.3;
+		margin-bottom:$spaceSize;
+		padding:0 0 0 3em;
+		&::before{
+				content:" ";
+				width:2.5em;
+				height:2.5em;
+				padding:0.5em;
+				display:block;
+				background:#b1cc78 url(../img/contact/icon01.png) no-repeat center bottom;
+				background-size:95% auto;
+				border-radius:50%;
+				position:absolute;
+				top:-0.1em;
+				left:0;
+				text-align:center;
+		}
+	}
+	dl{
+		dd{
+			color:$colorType04;
+		}
+	}
+}
+
+.contactExampleBox{
+	&>div:nth-child(2) .contactExample__title::before{
+		background:#b1cc78 url(../img/contact/icon02.png) no-repeat center top;
+				background-size:95% auto;
+	}
+	&>div:nth-child(3) .contactExample__title::before{
+		background:#b1cc78 url(../img/contact/icon03.png) no-repeat center bottom;
+				background-size:95% auto;
+	}
+	&>div:nth-child(4) .contactExample__title::before{
+		background:#b1cc78 url(../img/contact/icon04.png) no-repeat center bottom;
+				background-size:95% auto;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
